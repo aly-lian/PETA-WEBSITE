@@ -1,0 +1,144 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: 900;
+}
+
+body {
+  background-color: #23192b; 
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.text {
+  font-size: 20px;
+  color: #1a1122;
+  white-space: nowrap;
+}
+
+.system-topbar {
+  height: 28px;
+  background-color: #1a1122;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 12px;
+  font-size: 12px;
+  color: #ffffff;
+}
+
+.desktop-workspace {
+  flex: 1;
+  display: flex;
+  padding: 12px;
+  gap: 14px;
+  overflow: hidden;
+  background-color: #40324f;
+}
+
+.explorer-window {
+  flex: 1; 
+  background-color: #d8cdb4; 
+  border: 4px solid #1a1122;
+  display: flex;
+  flex-direction: column;
+}
+
+.window-header {
+  height: 36px;
+  background-color: #ffffff;
+  border-bottom: 4px solid #1a1122;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 8px;
+  color: #1a1122;
+  font-size: 12px;
+}
+
+.window-contents {
+  flex: 1;
+  display: flex;
+  overflow: hidden;
+}
+
+.files-grid {
+  flex: 1;
+  padding: 24px 20px;
+  overflow-y: scroll; 
+  scrollbar-width: none; 
+}
+
+.files-grid::-webkit-scrollbar {
+  display: block;
+  width: 28px; 
+}
+
+.files-grid::-webkit-scrollbar-track {
+  background-color: #cc7439; 
+  border-left: 4px solid #1a1122;
+}
+
+.files-grid::-webkit-scrollbar-thumb {
+  background-color: #f6b531;
+  border-bottom: 4px solid #1a1122;
+}
+
+.window-scroll-rail {
+  width: 28px;
+  background-color: #cc7439; 
+  border-left: 4px solid #1a1122;
+  position: relative; 
+}
+
+.scroll-handle-btn {
+  width: 100%;
+  height: 44px;
+  background-color: #f6b531; 
+  border-bottom: 4px solid #1a1122;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 3px;
+  cursor: pointer;
+  position: absolute; 
+  top: 0;
+  left: 0;
+}
+
+.scroll-handle-btn span {
+  width: 16px;
+  height: 4px;
+  background-color: #1a1122; 
+}
+
+.window-footer-split {
+  height: 16px;
+  background-color: #f6b531;
+  border-top: 4px solid #1a1122;
+  position: relative;
+}
+
+.right-sidebar {
+  width: 84px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 6px 0;
+  color: #ffffff;
+  font-size: 11px;
+}
+
+.sidebar-anchor {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+}
