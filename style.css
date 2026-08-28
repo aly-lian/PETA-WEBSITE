@@ -33,8 +33,8 @@ body {
 }
 
 .desktop-workspace {
-  flex: 1;
   display: flex;
+  flex: 1;
   padding: 12px;
   gap: 14px;
   overflow: hidden;
@@ -42,11 +42,12 @@ body {
 }
 
 .explorer-window {
+  display: flex;
   flex: 1; 
   background-color: #d8cdb4; 
   border: 4px solid #1a1122;
-  display: flex;
   flex-direction: column;
+  overflow: hidden;
 }
 
 .window-header {
@@ -62,8 +63,8 @@ body {
 }
 
 .window-contents {
-  flex: 1;
   display: flex;
+  flex: 1;
   overflow: hidden;
 }
 
@@ -71,7 +72,6 @@ body {
   flex: 1;
   padding: 24px 20px;
   overflow-y: scroll; 
-  scrollbar-width: none; 
 }
 
 .files-grid::-webkit-scrollbar {
@@ -86,36 +86,19 @@ body {
 
 .files-grid::-webkit-scrollbar-thumb {
   background-color: #f6b531;
-  border-bottom: 4px solid #1a1122;
-}
-
-.window-scroll-rail {
-  width: 28px;
-  background-color: #cc7439; 
   border-left: 4px solid #1a1122;
-  position: relative; 
-}
-
-.scroll-handle-btn {
-  width: 100%;
-  height: 44px;
-  background-color: #f6b531; 
   border-bottom: 4px solid #1a1122;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 3px;
-  cursor: pointer;
-  position: absolute; 
-  top: 0;
-  left: 0;
-}
-
-.scroll-handle-btn span {
-  width: 16px;
-  height: 4px;
-  background-color: #1a1122; 
+  border-top: 4px solid #1a1122;
+  background-image: linear-gradient(
+    #1a1122 4px, transparent 4px,
+    transparent 8px, #1a1122 8px,
+    #1a1122 12px, transparent 12px,
+    transparent 16px, #1a1122 16px,
+    #1a1122 20px, transparent 20px
+  );
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 16px 24px;
 }
 
 .window-footer-split {
@@ -127,13 +110,19 @@ body {
 
 .right-sidebar {
   width: 84px;
+  min-width: 84px;
+  max-width: 84px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
   padding: 6px 0;
   color: #ffffff;
   font-size: 11px;
+  gap: 16px;
+}
+
+.right-sidebar img {
+  image-rendering: pixelated; 
 }
 
 .sidebar-anchor {
@@ -141,4 +130,67 @@ body {
   flex-direction: column;
   align-items: center;
   cursor: pointer;
+}
+
+nav a:hover {
+  background-color: #57c7ff;       
+  border: 2px solid #1a1122;
+  padding: 2px 6px; 
+}
+
+.nav-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  border-bottom: 3px solid #1a1122;
+  margin-bottom: 24px;
+  padding: 0;
+}
+
+.tab {
+  display: inline-block;
+  padding: 6px 12px;
+  background-color: #e0d9cb;
+  border: 3px solid #1a1122;
+  border-bottom: none;
+  color: #1a1122 !important; 
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 12px;
+  border-radius: 4px 4px 0 0;
+}
+
+.tab.active-tab {
+  background-color: #f6b531;
+}
+
+.sub-card {
+  background-color: #fbeadc; 
+  border: 3px solid #1a1122;
+  box-shadow: 4px 4px 0px #1a1122;
+  margin-bottom: 24px;
+  display: flex;
+  flex-direction: column;
+}
+
+.sub-card-header {
+  background-color: #1a1122;
+  color: #ffffff;
+  padding: 6px 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 11px;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.sub-card-close-btn {
+  font-weight: 900;
+  cursor: default;
+  opacity: 0.7;
+}
+
+.sub-card-body {
+  padding: 16px;
 }
